@@ -1,3 +1,4 @@
+using CronJobAspNetMVC.Engine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace CronJobAspNetMVC
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            _ = JobScheduler.StartAsync();
         }
     }
 }
